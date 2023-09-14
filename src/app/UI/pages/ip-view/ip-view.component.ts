@@ -68,20 +68,6 @@ export class IpViewComponent implements OnInit {
     });
   }
 
-  validateInput(event: KeyboardEvent) {
-    const inputValue = (event.target as HTMLInputElement).value;
-    const key = event.key;
-
-    // Expresión regular para validar direcciones IP o dominios
-    const ipAddressPattern =
-      /^(?!.*(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))(?!.*(?=.{1,253}\.?$)[a-zA-Z0-9_](?:[a-zA-Z0-9_-]{0,61}[a-zA-Z0-9_])?(\.[a-zA-Z]{2,})+$).+$/;
-
-    // Validar si la tecla presionada es válida
-    if (!ipAddressPattern.test(inputValue + key)) {
-      event.preventDefault(); // Evitar que la tecla se ingrese en el campo
-    }
-  }
-
   ipAddressValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
       const value = control.value;
@@ -92,7 +78,6 @@ export class IpViewComponent implements OnInit {
       if (!ipAddressPattern.test(value)) {
         return { invalidIP: true };
       }
-
       return null;
     };
   }
