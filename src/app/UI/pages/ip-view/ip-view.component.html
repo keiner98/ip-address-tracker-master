@@ -1,20 +1,22 @@
 <div class="view-ip">
+  <app-loading *ngIf="loading"></app-loading>
   <header class="header">
     <div class="title">
       <span>IP Address Tracker</span>
     </div>
-    <div class="search">
+    <form [formGroup]="form" class="search">
       <div class="content-search">
         <input
           type="text"
           placeholder="Search for any IP address or domain"
-          [(ngModel)]="address"
+          (keypress)="validateInput($event)"
+          formControlName="ipAddress"
         />
         <button class="button-search" (click)="search()">
           <img src="../../../../assets/images/icon-arrow.svg" alt="" />
         </button>
       </div>
-    </div>
+    </form>
   </header>
   <div class="data-search">
     <div class="card">
@@ -22,22 +24,25 @@
         <div class="content-card">
           <div class="section-card">
             <span class="title">IP ADDRESS</span>
-            <span class="content">192.212.741.101</span>
+            <span class="content"> {{ geoData.ip }} </span>
           </div>
           <div class="divider"></div>
           <div class="section-card">
             <span class="title">Location</span>
-            <span class="content">Brooklyn, NY 10001 10001</span>
+            <span class="content"
+              >{{ geoData.location.city }}, {{ geoData.location.country }}
+              {{ geoData.location.geonameId }}
+            </span>
           </div>
           <div class="divider"></div>
           <div class="section-card">
             <span class="title">Timezone</span>
-            <span class="content">UTC - 05:00</span>
+            <span class="content">UTC {{ geoData.location.timezone }} </span>
           </div>
           <div class="divider"></div>
           <div class="section-card">
             <span class="title">ISP</span>
-            <span class="content">SpaceX Starlink</span>
+            <span class="content"> {{ geoData.isp }} </span>
           </div>
         </div>
       </app-card>
