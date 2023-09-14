@@ -64,22 +64,8 @@ export class IpViewComponent implements OnInit {
 
   initForm() {
     this.form = this.fb.group({
-      ipAddress: ['', [this.ipAddressValidator()]],
+      ipAddress: [''],
     });
-  }
-
-  ipAddressValidator(): ValidatorFn {
-    return (control: AbstractControl): { [key: string]: any } | null => {
-      const value = control.value;
-      // Expresión regular para validar direcciones IP o dominios
-      const ipAddressPattern =
-        /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$|^(?=.{1,253}\.?$)[a-zA-Z0-9_](?:[a-zA-Z0-9_-]{0,61}[a-zA-Z0-9_])?(\.[a-zA-Z]{2,})+$/;
-
-      if (!ipAddressPattern.test(value)) {
-        return { invalidIP: true };
-      }
-      return null;
-    };
   }
 
   initMap() {
