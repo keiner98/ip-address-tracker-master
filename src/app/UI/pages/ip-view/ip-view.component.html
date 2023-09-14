@@ -6,6 +6,7 @@
     </div>
     <form [formGroup]="form" class="search">
       <div class="content-search">
+        {{ form.value.ipAddress }}
         <input
           type="text"
           placeholder="Search for any IP address or domain"
