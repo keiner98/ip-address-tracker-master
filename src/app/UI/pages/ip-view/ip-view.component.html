@@ -1,0 +1,49 @@
+<div class="view-ip">
+  <header class="header">
+    <div class="title">
+      <span>IP Address Tracker</span>
+    </div>
+    <div class="search">
+      <div class="content-search">
+        <input
+          type="text"
+          placeholder="Search for any IP address or domain"
+          [(ngModel)]="address"
+        />
+        <button class="button-search" (click)="search()">
+          <img src="../../../../assets/images/icon-arrow.svg" alt="" />
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="data-search">
+    <div class="card">
+      <app-card>
+        <div class="content-card">
+          <div class="section-card">
+            <span class="title">IP ADDRESS</span>
+            <span class="content">192.212.741.101</span>
+          </div>
+          <div class="divider"></div>
+          <div class="section-card">
+            <span class="title">Location</span>
+            <span class="content">Brooklyn, NY 10001 10001</span>
+          </div>
+          <div class="divider"></div>
+          <div class="section-card">
+            <span class="title">Timezone</span>
+            <span class="content">UTC - 05:00</span>
+          </div>
+          <div class="divider"></div>
+          <div class="section-card">
+            <span class="title">ISP</span>
+            <span class="content">SpaceX Starlink</span>
+          </div>
+        </div>
+      </app-card>
+    </div>
+  </div>
+  <section class="content-map">
+    <div id="map"></div>
+  </section>
+</div>

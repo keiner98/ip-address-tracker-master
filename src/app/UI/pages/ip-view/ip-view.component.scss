@@ -1,0 +1,125 @@
+//Colors
+
+$dark-color: hsl(0, 0%, 17%);
+$dark-color-two: hsl(0, 0%, 59%);
+
+.view-ip {
+  height: 100vh;
+  width: 100vw;
+  font-family: "Rubik";
+  .header {
+    height: 15.625rem;
+    width: 100%;
+    background: url("../../../../assets/images/pattern-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    .title {
+      padding-top: 1.875rem;
+      span {
+        color: white;
+        font-size: 1.75rem;
+        font-weight: 600;
+      }
+    }
+    .search {
+      padding-top: 1.875rem;
+      width: 85%;
+      .content-search {
+        height: 3.0625rem;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        input {
+          height: 100%;
+          border: none;
+          border-radius: 0.75rem 0 0 0.75rem;
+          outline: none;
+          padding: 0 1rem;
+          width: 100%;
+          max-width: 23.75rem;
+          font-size: 1.125rem;
+        }
+        button {
+          border: none;
+          height: 100%;
+          background-color: $dark-color;
+          cursor: pointer;
+          width: 3.4375rem;
+          border-radius: 0 0.5rem 0.5rem 0;
+        }
+      }
+    }
+  }
+
+  .data-search {
+    position: absolute;
+    top: 10.3rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    .card {
+      width: 85%;
+      max-width: 56.25rem;
+      .content-card {
+        padding: 1.25rem;
+        display: flex;
+        justify-content: space-around;
+
+        align-items: flex-start;
+        .section-card {
+          display: flex;
+          flex-direction: column;
+          max-width: 8.125rem;
+          .title {
+            color: $dark-color-two;
+            font-size: 0.75rem;
+            font-weight: 700;
+          }
+          .content {
+            padding-top: 0.625rem;
+            color: $dark-color;
+            font-size: 1.25rem;
+            font-weight: bold;
+          }
+        }
+        .divider {
+          height: 3.125rem;
+          width: 0.0625rem;
+          background-color: $dark-color-two;
+        }
+      }
+    }
+  }
+
+  .content-map {
+    height: calc(100vh - 15.625rem);
+    #map {
+      height: 100%;
+      z-index: 0;
+    }
+  }
+}
+
+@media (max-width: 47.9375rem) {
+  .content-card {
+    flex-direction: column;
+    align-items: center !important;
+    gap: 1.25rem;
+  }
+
+  .section-card {
+    max-width: none !important;
+    align-items: center;
+  }
+  .divider {
+    display: none !important;
+  }
+}
