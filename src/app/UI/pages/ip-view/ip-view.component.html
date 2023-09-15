@@ -1,4 +1,4 @@
-<div class="view-ip">
+<main class="view-ip">
   <app-loading *ngIf="loading"></app-loading>
   <header class="header">
     <div class="title">
@@ -21,28 +21,31 @@
     <div class="card">
       <app-card>
         <div class="content-card">
-          <div class="section-card">
-            <span class="title">IP ADDRESS</span>
-            <span class="content"> {{ geoData.ip }} </span>
-          </div>
+          <app-content-card
+            title="IP ADDRESS"
+            [content]="geoData.ip"
+          ></app-content-card>
           <div class="divider"></div>
-          <div class="section-card">
-            <span class="title">Location</span>
-            <span class="content"
-              >{{ geoData.location.city }}, {{ geoData.location.country }}
-              {{ geoData.location.geonameId }}
-            </span>
-          </div>
+          <app-content-card
+            title="LOCATION"
+            [content]="
+              geoData.location.city +
+              ', ' +
+              geoData.location.country +
+              ' ' +
+              geoData.location.geonameId
+            "
+          ></app-content-card>
           <div class="divider"></div>
-          <div class="section-card">
-            <span class="title">Timezone</span>
-            <span class="content">UTC {{ geoData.location.timezone }} </span>
-          </div>
+          <app-content-card
+            title="TIMEZONE"
+            [content]="'UTC ' + geoData.location.timezone"
+          ></app-content-card>
           <div class="divider"></div>
-          <div class="section-card">
-            <span class="title">ISP</span>
-            <span class="content"> {{ geoData.isp }} </span>
-          </div>
+          <app-content-card
+            title="ISP"
+            [content]="geoData.isp"
+          ></app-content-card>
         </div>
       </app-card>
     </div>
@@ -50,4 +53,4 @@
   <section class="content-map">
     <div id="map"></div>
   </section>
-</div>
+</main>

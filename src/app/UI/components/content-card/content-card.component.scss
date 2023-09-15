@@ -1,0 +1,31 @@
+//Colors
+
+$dark-color: hsl(0, 0%, 17%);
+$dark-color-two: hsl(0, 0%, 59%);
+
+.section-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 135px;
+  .title {
+    color: $dark-color-two;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  .content {
+    padding-top: 0.625rem;
+    color: $dark-color;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    max-width: 273px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 47.9375rem) {
+  .section-card {
+    max-width: none !important;
+    align-items: center;
+  }
+}
