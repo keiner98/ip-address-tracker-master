@@ -1,24 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,700;1,800;1,900&display=swap");
+
+@font-face {
+  font-family: "Rubik";
+  src: url("./assets/fonts/Rubik-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Rubik Regular";
+  src: url("./assets/fonts/Rubik-Regular.ttf");
+}
 body,
 html {
   margin: 0;
   padding: 0;
+  font-family: "Rubik Regular";
 }
 
 @import "ngx-toastr/toastr";
-
-// bootstrap style toast
-// or import a bootstrap 4 alert styled design (SASS ONLY)
-// should be after your bootstrap imports, it uses bs4 variables, mixins, functions
-// @import "ngx-toastr/toastr-bs4-alert";
-
-// if you'd like to use it without importing all of bootstrap it requires
-// @import "bootstrap/scss/functions";
-// @import "bootstrap/scss/variables";
-// @import "bootstrap/scss/mixins";
-// // bootstrap 4
-// @import "ngx-toastr/toastr-bs4-alert";
-// // boostrap 5
-// @import "ngx-toastr/toastr-bs5-alert";

@@ -6,7 +6,7 @@ $dark-color-two: hsl(0, 0%, 59%);
 .section-card {
   display: flex;
   flex-direction: column;
-  max-width: 135px;
+  max-width: 9.375rem;
   .title {
     color: $dark-color-two;
     font-size: 0.75rem;
@@ -20,6 +20,7 @@ $dark-color-two: hsl(0, 0%, 59%);
     text-overflow: ellipsis;
     max-width: 273px;
     overflow: hidden;
+    font-family: 'Rubik Regular';
   }
 }
 
